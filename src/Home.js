@@ -3,10 +3,11 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import SpaceGame from './SpaceGame';
 import { Route, Link , Routes} from 'react-router-dom';
 import ButtonBase from '@mui/material/ButtonBase';
 import BlackSkyBox from "./assets/02-34-11-741_512.gif";
+import DevlogImage from "./images/devlogupdate.jpg";
+
 const Img = styled('img')({
   margin: 'auto',
   display: 'block',
@@ -15,17 +16,39 @@ const Img = styled('img')({
 });
 function Home() {
     const [date, setDate] = useState(new Date());
-  
+    const [temp, setTemp] = useState();
     function refreshClock() {
       setDate(new Date());
 
+      
     }
+    //when mouse hovers over link
+    function MouseOverLink(event) {
+      event.target.style.color = 'gray';
+    }
+    function MouseOverPanel(event){
+      if(event.target.style.bg=="t"){
+        event.target.style.width = "100%";
+        event.target.style.height="150%";
+      }
+    }
+    function MouseOffPanel(event){
+      if(event.target.style.bg=="t"){
+        event.target.style.width = "80%";
+        event.target.style.height="120%";
+      }
+
+    }
+
+    //updating the clock
     useEffect(() => {
         const timerId = setInterval(refreshClock, 1000);
         return function cleanup() {
           clearInterval(timerId);
         };
       }, []);
+
+    //styling for paper panel
     const Item = styled(Paper)(({ theme }) => ({
       backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
       ...theme.typography.body2,
@@ -33,17 +56,23 @@ function Home() {
       textAlign: 'center',
       color: theme.palette.text.secondary,
     }));
-    const renderHeader = (text, link, body) => {
-        return  <Grid item xs={2}>
-                  <Paper sx={{height:200, width: "80%"}}>
-                    <Item><li class="griditem"><Link to={link} style={{textDecoration: "none", color: "black"}}>{text}</Link></li></Item>
-                    {body}
-                    <ButtonBase sx={{ width: 128, height: 128 }}>
-                      <Link to={link}>
-                        <Img alt="complex" src={BlackSkyBox} style={{marginTop: "10%", marginLeft: "10%"}} />
-                      </Link>
+
+
+    //for adding new panels
+    const renderHeader = (text, link, body, image) => {
+
+        return  <Grid item class='app' xs= {2} style={{marginTop: "7%", marginLeft: "5%", width: "20%"}}>
+                  <Link to={link} style={{textDecoration: "none"}}>
+                  <Paper square={false} style={{height:"120%", width: "80%", bg:"t"}} onMouseOver={MouseOverPanel} onMouseOut={MouseOffPanel}>
+                    <Item><li class="griditem">{text}</li></Item>
+                    <ButtonBase sx={{ width: 128, height: 128 }} style={{marginRight: '10%'}}>     
+                        <Img alt="complex" src={image} style={{marginTop: '10%', marginLeft: "10%", pointerEvents: 'none'}}/>
+                    </ButtonBase>
+                    <ButtonBase sx={{ width: 128, height: 128 }}>     
+                        {body}
                     </ButtonBase>
                   </Paper>
+                  </Link>
                 </Grid>
         }
     return (
@@ -51,9 +80,10 @@ function Home() {
             <div class="clock">
                 {date.toLocaleTimeString()}
             </div>
-            <div class="homeitems">
-              <Grid container spacing={{ xs: 2, md: 12}} columns={{ xs: 4, sm: 4, md: 8 }}>
-                {renderHeader("SPACE GAME (Gamejam)", "/space", "A project for the scripto game jam using babylonjs")}
+            <div class="homeitems" style={{marginLeft:"3%"}} >
+              <Grid container spacing={{ xs: 2, md: 8}} columns={{ xs: 4, sm: 4, md: 8 }}>
+                {renderHeader("SPACE GAME (Gamejam)", "/space", "A project for the scripto game jam using babylonjs (early stages)", BlackSkyBox)}
+                {renderHeader("Website Devlog", "/website", "A log of updates and changes made to this website. (Coming Soon)", DevlogImage)}
               </Grid>
             </div>
         </div>

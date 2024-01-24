@@ -2,7 +2,6 @@
 import React, { Component } from "react";
 //import * as BABYLON from '@babylonjs';
 import * as BABYLON from "babylonjs";
-import stlFileLoader from "https://cdn.babylonjs.com/loaders/babylon.stlFileLoader.js"
 
 import BlackSky from "./assets/02-34-11-741_512.gif";
 import MetalColor from "./assets/Metal/MetalPlates001_1K-JPG_Color.jpg";
