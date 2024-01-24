@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'BarlowSemiCondensed-Black';
+  src: local('Black'), url(./fonts/barlow/BarlowSemiCondensed-Black.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'BarlowSemiCondensed-Bold';
+  src: local('Bold'), url(./fonts/barlow/BarlowSemiCondensed-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'BarlowSemiCondensed-Light';
+  src: local('Light'), url(./fonts/barlow/BarlowSemiCondensed-ExtraLight.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'BarlowSemiCondensed-Thin';
+  src: local('Thin'), url(./fonts/barlow/BarlowSemiCondensed-Thin.ttf) format('truetype');
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +26,138 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.navigationbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  cursor: pointer;
+  margin-right: 1.5%;
+ }
+ .background {
+  /*background-color: rgb(70, 13, 13);*/
+  overflow: hidden;
+}
+
+.navitems a{
+  float: left;
+  color: wheat;
+  text-align: center;
+  padding:1vh;
+  text-decoration: none;
+  font-size: 200%;
+  font-family: BarlowSemiCondensed-Thin;
+}
+.navitems li{
+  float: left;
+  list-style-type: none;
+
+}
+.navitems li:hover{
+  border-radius: 20%;
+  background-color: rgba(255, 255, 255, 0.473);
+}
+.title{
+  text-align: center;
+  font-size:40px;
+  color: wheat;
+  font-family: BarlowSemiCondensed-Bold;
+}
+.qblabel{
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 20%;
+  width: 60%;
+  height: 10%;
+}
+.questionbox{
+  width: 100%;
+  height: 50%;
+  resize: none;
+}
+.answerbox{
+  width: 60%;
+  height: 90%;
+  margin-left: 20%;
+  text-align: start;
+  opacity: 100%;
+}
+.infobox{
+  width: 60%;
+  height: 90%;
+  margin-left: 20%;
+  margin-bottom: 20%;
+  text-align: start;
+  opacity: 100%;
+}
+.page-header{
+  font-size: xx-large;
+  text-align: center;
+}
+.text-header{
+  font-size: x-large;
+}
+.text-subheader{
+  font-size: larger;
+}
+.text{
+  font-size: smaller;
+}
+.subtext{
+  font-size: x-small;
+}
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 800px;
+}
+.each-slide-effect2 > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+.bottomnav {
+  margin-top: 100%;
+  background-color: rgba(95, 95, 95, 0.5);
+}
+.footer {
+  color: gray;
+  font-size: small;
+}
+.dependencies_image
+{
+  resize: 50%;
+}
+.pdfviewer{
+  justify-self: center;
+  width: 50%;
+}
+.clock{
+  font-family: BarlowSemiCondensed-Light;
+  text-align: center;
+  font-size: 30px;
+  color: wheat;
+}
+.homeitems{
+  font-family: BarlowSemiCondensed-Bold;
+  color: white;
+  margin-top: 1%;
+  padding: 5vh;
+  
+}
+.griditem{
+  list-style-type: none;
+  text-decoration: none;
 }
