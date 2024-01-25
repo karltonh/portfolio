@@ -152,7 +152,7 @@ code {
 }
 .homeitems{
   font-family: BarlowSemiCondensed-Bold;
-  color: white;
+  color: wheat;
   margin-top: 1%;
   padding: 5vh;
   
@@ -160,4 +160,14 @@ code {
 .griditem{
   list-style-type: none;
   text-decoration: none;
+}
+.navitems li:hover{
+  border-radius: 20%;
+  background-color: rgba(255, 255, 255, 0.473);
+}
+.paneltitle{
+  font-family: BarlowSemiCondensed-Bold;
+  color: black;
+  font-size: 30px;
+  text-align: top;
 }
