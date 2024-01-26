@@ -18,7 +18,7 @@ function About() {
         <div >
         <Grid container spacing={{ xs: 2, md: 8}} columns={{ xs: 4, sm: 4, md: 8 }}>
             <Grid item class='app' xs= {2} style={{marginTop: "7%", marginLeft: "10%", width: "80%",height: "80%"}}>
-                <Paper square={false} style={{height:"100%", display: 'flex'}}>
+                <Paper square={false} style={{height:"100%", display: 'flex', backgroundColor: "#fff6e6"}}>
                     <ButtonBase sx={{ width: "20%", height: "90%" }} style={{marginRight: '10%', flexDirection: 'row'}}>
                         <Img alt="complex" src={photo} style={{marginTop: '5%', marginLeft: "10%", marginBottom: '5%', width: "100%", height: "90%"}}/>     
                     </ButtonBase>

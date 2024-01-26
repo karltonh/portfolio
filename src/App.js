@@ -12,21 +12,29 @@ import { useState, useEffect } from 'react';
 function App() {
   const [date, setDate] = useState(new Date());
   const [isDayTime, setDayTime] = useState();
+  const [image, setImage] = useState(image1);
   function refreshClock() {
     setDate(new Date());
     setDayTime(date.getHours()>6 && date.getHours()<20);
+    if (isDayTime) {
+      setImage(image1)
+    }
+    else{
+      setImage(image2)
+    }
   }
   useEffect(() => {
-    const timerId = setInterval(refreshClock, 10000);
+    const timerId = setInterval(refreshClock, 1000);
     return function cleanup() {
+      
       clearInterval(timerId);
     };
   }, []);
-  if (isDayTime) {
+  
     return (
       <div class="topbottomnav">
       <div style={{ 
-              backgroundImage: `url(${image1})`,
+              backgroundImage: `url(${image})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover"
               }}>
@@ -50,32 +58,7 @@ function App() {
       </div>
       );
     }
-  return (
-    <div class="topbottomnav">
-    <div style={{ 
-            backgroundImage: `url(${image2})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover"
-          }}>
-      <div class="topnav">
-        <header class="title">Karlton Hall</header>
-        <nav class="navigationbar background">
-          <ul class="navitems">
-          <li><Link to="/">HOME</Link></li>
-            <li><Link to="/about">ABOUT</Link></li>
-            <li><a href="https://github.com/karltonh"target="_blank">GITHUB</a></li>
-          </ul>
-        </nav>
-      </div>
-      <Routes><Route path="/" element={<Home/>}/></Routes>
-      <Routes><Route path="/about" element={<About/>}/></Routes>
-      <Routes><Route path="/space" element={<SpaceGame/>}/></Routes>
-      <div class = "bottomnav">
-        <header class = "footer">Karlton Hall 2024</header>
-      </div>
-    </div>
-    </div>
-  );
-}
+
+
 
 export default App;

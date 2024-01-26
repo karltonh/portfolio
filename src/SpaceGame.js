@@ -1,15 +1,17 @@
 
-import React, { Component } from "react";
-//import * as BABYLON from '@babylonjs';
-import * as BABYLON from "babylonjs";
+import React, { Component } from 'react';
+import * as BABYLON from 'babylonjs';
+import "babylonjs-loaders";
+//import * as BABYLON from "@babylonjs/core";
+import ship from "./assets/Models/ship2.glb";
+import { Tools } from 'babylonjs';
+
 
 import BlackSky from "./assets/02-34-11-741_512.gif";
 import MetalColor from "./assets/Metal/MetalPlates001_1K-JPG_Color.jpg";
 import MetalBumpGL from "./assets/Metal/MetalPlates001_1K-JPG_NormalGL.jpg";
 import FoilColor from "./assets/Foil/Foil002_1K-JPG_Color.jpg";
 import FoilBumpGL from "./assets/Foil/Foil002_1K-JPG_NormalGL.jpg";
-
-import ship from "./assets/Models/ship.fbx";
 var scene;
 var boxMesh;
 /**
@@ -24,42 +26,30 @@ class SpaceGame extends Component {
   componentDidMount = () => {
     // start ENGINE
     this.engine = new BABYLON.Engine(this.canvas, true);
-
-    //Create Scene
     scene = new BABYLON.Scene(this.engine);
-    BABYLON.SceneLoader.Append(ship, "BoomBox.gltf", scene, function (scene) {
-        // Create a default arc rotate camera and light.
-        scene.createDefaultCameraOrLight(true, true, true);
-
-        // The default camera looks at the back of the asset.
-        // Rotate the camera by 180 degrees to the front of the asset.
-        scene.activeCamera.alpha += Math.PI;
-    });
-    //--Light---
+    //scene.debugLayer.show();    //Light and Camera
     this.addLight();
-
-    //--Camera---
     this.addCamera();
 
     //--Meshes---
-    this.addBox();
-
-    //--Ground---
-    this.addGround();
-
+    //this.addBox();
+    //this.addGround();
+    this.addSkyBox();
     // Add Events
+    var fileName = Tools.GetFilename(ship);
+    var filePath = Tools.GetFolderPath(ship);
+    
+    var mesh = BABYLON.SceneLoader.ImportMeshAsync( "", filePath, fileName, scene);
     window.addEventListener("resize", this.onWindowResize, false);
-    window.addEventListener(`Wheel`, evt => evt.preventDefault());
+    window.addEventListener('Wheel', evt => evt.preventDefault());
 
     // Render Loop
     this.engine.runRenderLoop(() => {
       scene.render();
-      
     });
 
     //Animation
     scene.registerBeforeRender(() => {
-
     });
   };
 
@@ -122,7 +112,10 @@ class SpaceGame extends Component {
     groundMaterial.bumpTexture = new BABYLON.Texture(MetalBumpGL, scene);
     ground.material = groundMaterial;
 
-    //Add SkyBox
+
+  };
+
+  addSkyBox = () => {
     var photoSphere = BABYLON.Mesh.CreateSphere("skyBox", 16.0, 50.0, scene);
     var skyboxMaterial = new BABYLON.StandardMaterial(BlackSky, scene);
     skyboxMaterial.emissiveTexture = new BABYLON.Texture(BlackSky, scene, 1, 0);
@@ -133,7 +126,6 @@ class SpaceGame extends Component {
     skyboxMaterial.backFaceCulling = false;
     photoSphere.material = skyboxMaterial;
   };
-
   /**
    * Add Models
    */
@@ -154,12 +146,15 @@ class SpaceGame extends Component {
 
   render() {
     return (
-      <canvas
-        style={{ width: "90%", height: "90%", alignSelf: "center", marginLeft: "5%"}}
-        ref={canvas => {
-          this.canvas = canvas;
-        }}
-      />
+      <div style={{font: 'none'}}>
+        <canvas
+          style={{ font: 'none', width: "90%", height: "90%", alignSelf: "center", marginLeft: "5%"}}
+          ref={canvas => {
+            this.canvas = canvas;
+          }}
+        />
+        
+      </div>
     );
     
   }
