@@ -4,6 +4,7 @@
   "homepage": "https://karltonh.github.io/portfolio",
   "private": true,
   "dependencies": {
+    "@babylonjs/controls": "^2.0.0-alpha.1",
     "@babylonjs/react-native": "^1.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",

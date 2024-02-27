@@ -79,7 +79,6 @@ function Home() {
         <div class="clock">{date.toLocaleTimeString()}</div>
         <div class="homeitems" style={{marginLeft:"3%"}} >
           <Grid container spacing={{ xs: 2, md: 8}} columns={{ xs: 4, sm: 4, md: 8 }}>
-            {renderHeader("SPACE GAME (Gamejam)", "/space", "A project for the scripto game jam using babylonjs (early stages)", BlackSkyBox)}
             {renderHeader("Website Devlog", "/website", "A log of updates and changes made to this website. (Coming Soon)", DevlogImage)}
           </Grid>
         </div>
