@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.f9ec6df1.css",
-    "main.js": "/portfolio/static/js/main.7395eb99.js",
+    "main.js": "/portfolio/static/js/main.622f41f4.js",
+    "static/media/ship2.glb": "/portfolio/static/media/ship2.58f599a7d9354db7be4e.glb",
     "static/media/IMG_0932.jpg": "/portfolio/static/media/IMG_0932.3a2b4e47340986caf252.jpg",
     "static/media/Foil002_1K-JPG_NormalGL.jpg": "/portfolio/static/media/Foil002_1K-JPG_NormalGL.c3a3d4aabff219ae9136.jpg",
     "static/media/pexels-irina-iriser-1707213.jpg": "/portfolio/static/media/pexels-irina-iriser-1707213.38c47b52a308f6312190.jpg",
@@ -15,14 +16,13 @@
     "static/media/BarlowSemiCondensed-ExtraLight.ttf": "/portfolio/static/media/BarlowSemiCondensed-ExtraLight.8d64f43097398ffc5b3b.ttf",
     "static/media/BarlowSemiCondensed-Thin.ttf": "/portfolio/static/media/BarlowSemiCondensed-Thin.c09241c881552f34e062.ttf",
     "static/media/devlogupdate.jpg": "/portfolio/static/media/devlogupdate.78afb1ebae6ced557bb3.jpg",
-    "static/media/ship2.glb": "/portfolio/static/media/ship2.442d2b4bc5698f5056b9.glb",
     "static/media/logo.svg": "/portfolio/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/portfolio/index.html",
     "main.f9ec6df1.css.map": "/portfolio/static/css/main.f9ec6df1.css.map",
-    "main.7395eb99.js.map": "/portfolio/static/js/main.7395eb99.js.map"
+    "main.622f41f4.js.map": "/portfolio/static/js/main.622f41f4.js.map"
   },
   "entrypoints": [
     "static/css/main.f9ec6df1.css",
-    "static/js/main.7395eb99.js"
+    "static/js/main.622f41f4.js"
   ]
 }
