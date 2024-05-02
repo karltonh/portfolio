@@ -25,13 +25,14 @@ function About() {
                     <ButtonBase sx={{ width: '25%', height: '10%' }} style={{flexDirection: 'column'}}>   
                         <a class="paneltitle">ABOUT ME: </a>
                         <a class="panelContent">I am a software developer currently specializing in game development.</a>   
-                        <a class="panelContent">{"I graduated from Texas Tech with B.S. in Computer Science, my senior capstone project was to fine tune an LLM (we chose Falcon 7b from hugging face) to meet specifications given to us by Lockheed Martin"}</a>
-                        <Link to={"https://karltonh.github.io/Rollingthunder_ttu/"}><a class="panelContent">(More information on capstone project)</a></Link>
+                        <a class="panelContent">{"I graduated from Texas Tech with B.S. in Computer Science."}</a>
+                        <Link to={"https://karltonh.github.io/Rollingthunder_ttu/"}><a class="panelContent">(capstone project)</a></Link>
                         <a class="panelContent">This website serves as a public place for my portfolio.</a>
+                        <a class="panelContent">You can see the games I have developed and all of my side projects.</a>
                     </ButtonBase>
                     <ButtonBase sx={{ width: '25%', height: '10%'}} style={{flexDirection: 'column'}}>   
                         <a class="paneltitle">CURRENT PROJECTS: </a>
-                        <a class="panelContent">Space Game.</a>    
+                        <a class="panelContent">TBD</a>    
                     </ButtonBase>
                 </Paper>
             </Grid>
