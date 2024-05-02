@@ -7,6 +7,8 @@ import { Route, Link , Routes} from 'react-router-dom';
 import ButtonBase from '@mui/material/ButtonBase';
 import BlackSkyBox from "./assets/02-34-11-741_512.gif";
 import DevlogImage from "./images/devlogupdate.jpg";
+import DevlogImage2 from "./images/SomethingStrange.png";
+import DevlogImage3 from './images/Animosity.png'
 
 
 const Img = styled('img')({
@@ -80,6 +82,8 @@ function Home() {
         <div class="homeitems" style={{marginLeft:"3%"}} >
           <Grid container spacing={{ xs: 2, md: 8}} columns={{ xs: 4, sm: 4, md: 8 }}>
             {renderHeader("Website Devlog", "/website", "A log of updates and changes made to this website. (Coming Soon)", DevlogImage)}
+            {renderHeader("Something Strange", "https://khtown.itch.io/something-strange", "Horror game developed in 2020", DevlogImage2)}
+            {renderHeader("Animosity", "https://khtown.itch.io/animosity", "Developed for game jam in 2022", DevlogImage3)}
           </Grid>
         </div>
       </div>
